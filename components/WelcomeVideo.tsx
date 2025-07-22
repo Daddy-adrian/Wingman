@@ -1,6 +1,6 @@
 import { useEvent } from 'expo';
 import { useVideoPlayer, VideoView } from 'expo-video';
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View, Button, Dimensions } from 'react-native';
 
 const videoSource =
   'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
@@ -32,19 +32,24 @@ export default function VideoScreen() {
   );
 }
 
+const { width, height} = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     padding: 10,
     alignItems: 'center',
+    backgroundColor: 'black',
     justifyContent: 'center',
     paddingHorizontal: 50,
   },
   video: {
-    width: 350,
-    height: 275,
+    width: width,
+    height: height,
   },
   controlsContainer: {
-    padding: 10,
+    position: 'absolute',
+    bottom: 50,
+    alignSelf: 'center',
   },
 });
