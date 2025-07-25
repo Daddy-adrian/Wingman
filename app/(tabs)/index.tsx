@@ -1,19 +1,14 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
 import WelcomeVideo from '@/components/WelcomeVideo';
 
-
+// using the WelcomeVideo file in the home screen
 export default function HomeScreen() {
   return (
    <WelcomeVideo />
   );
 }
-
+// styling the home screen
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
