@@ -5,6 +5,8 @@ import { useRouter,useFocusEffect } from 'expo-router';
 import { useCallback } from 'react';
 import { useVideoPlayer, VideoView } from 'expo-video';
 import { Button, Dimensions, StyleSheet, View } from 'react-native';
+import { colors } from '@/constants/theme';
+
 
 
 // link to video's url
@@ -40,12 +42,14 @@ export default function VideoScreen() {
       <View style={styles.skipButtonContainer}>
           <Button
            title="Skip"
-           onPress={() => router.navigate('/skip')}
+           color={colors.primary}
+           
+           onPress={() => router.navigate('../authServices')}
           />    
       </View>
        
     <View style={styles.controlsContainer}>
-        <Button
+        <Button 
           title={isPlaying ? 'Pause' : 'Play'}
           onPress={() => {
             if (isPlaying) {
@@ -68,7 +72,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     alignItems: 'center',
-    backgroundColor: 'black',
+    backgroundColor: colors.background,
     justifyContent: 'center',
     paddingHorizontal: 50,
   },
@@ -78,7 +82,7 @@ const styles = StyleSheet.create({
   },
     skipButtonContainer: {
     position: 'absolute',      // layer it above the video
-    bottom: 100,               // place 100px up from bottom of screen
+    bottom: 100,               // place 100px up from bottom of screen   
     alignSelf: 'center',       // center horizontally
     zIndex: 1,                 // ensure it sits above the play/pause View
   },
