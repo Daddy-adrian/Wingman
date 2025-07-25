@@ -1,3 +1,7 @@
+
+// imports
+
+
 describe('WelcomeVideo', () => {
   it('should render the video player on screen', () => {});
   it('should automatically play the video when mounted', () => {});
